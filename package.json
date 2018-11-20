@@ -9,7 +9,8 @@
     "//this command will fallback to default src/index.js file to build// build-production": "webpack --mode production",
     "build": "webpack --mode development ./src/index.js --output ./dist/main.js",
     "build-production": "webpack --mode production ./src/index.js --output ./dist/main.js",
-    "dev": "webpack-dev-server --mode development --open",
+    "// barebone webpack dev server config  //dev": "webpack-dev-server --mode --open",
+    "dev": "webpack-dev-server --mode development ./src/App.js --output ./dist/main.js --open",
     "lint": "eslint \"src/**/*.{js,jsx}\""
   },
   "repository": {
@@ -41,5 +42,8 @@
     "webpack": "^4.26.0",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
+  },
+  "dependencies": {
+    "react-router-dom": "^4.3.1"
   }
 }
