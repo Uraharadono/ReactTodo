@@ -1,15 +1,16 @@
 {
-  "name": "ReactTodo",
+  "name": "ReactTodoApp",
   "version": "1.0.0",
   "description": "Simple pure React web todo list",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "//this command will fallback to default src/index.js file to build// dev": "webpack --mode development",
-    "//this command will fallback to default src/index.js file to build// build": "webpack --mode production",
-    "dev": "webpack --mode development ./src/index.js --output ./dist/main.js",
-    "build": "webpack --mode production ./src/index.js --output ./dist/main.js",
-    "start": "webpack-dev-server --mode development --open"
+    "//this command will fallback to default src/index.js file to build// build": "webpack --mode development",
+    "//this command will fallback to default src/index.js file to build// build-production": "webpack --mode production",
+    "build": "webpack --mode development ./src/index.js --output ./dist/main.js",
+    "build-production": "webpack --mode production ./src/index.js --output ./dist/main.js",
+    "dev": "webpack-dev-server --mode development --open",
+    "lint": "eslint \"src/**/*.{js,jsx}\""
   },
   "repository": {
     "type": "git",
@@ -26,8 +27,12 @@
     "@babel/core": "^7.1.6",
     "@babel/preset-env": "^7.1.6",
     "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
     "css-loader": "^1.0.1",
+    "eslint": "^5.9.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-react": "^7.11.1",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.4",
