@@ -1,0 +1,50 @@
+// ======================================================================================
+// Variables
+// App application variables should be declared here
+// ======================================================================================
+
+// Colors
+//
+$color-black: #354052;
+$color-white: #ffffff;
+
+$color-gray-base: #e6eaee;
+$color-gray-light: #f7f8f9;
+$color-gray-dark: #b5b5b5;
+
+$color-blue-base: #1a84d3;
+$color-blue-light: #2399f1;
+$color-blue-dark: #1270b5;
+
+$color-green-base: #1e9d09;
+$color-green-light: #24b00d;
+$color-green-dark: #1a740b;
+
+$color-yellow-base: #fff2bf;
+$color-yellow-light: #f9f7ef;
+$color-yellow-dark: #856404;
+
+$color-midnight-blue-base: #222c3c;
+$color-midnight-blue-dark: #1d2531;
+$color-midnight-blue-light: #5b6779;
+
+$color-pink-base: #ec80ae;
+$color-pink-dark: #ec6fa4;
+
+$color-purple-dark: #41285d;
+
+$color-red-light: #ed1c24;
+$color-red-base: darken($color-red-light, 5%);
+$color-red-dark: darken($color-red-light, 10%);
+
+// Fonts
+//
+$font-size-base: 0.875rem;
+$font-family-base: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+$font-family: 'Source Sans Pro', $font-family-base;
+
+// Base sizes
+//
+$line-height: 1.8;
+$modular-scale-ratio: 1.2;
+$leading: $font-size-base * $line-height;

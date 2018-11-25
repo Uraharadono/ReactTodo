@@ -1,0 +1,125 @@
+// ======================================================================================
+// Custom variables
+// ======================================================================================
+
+@import '../common/variables';
+
+//==============================================================================================
+// Font awesome
+//==============================================================================================
+
+// @import '../vendor/font-awesome/font-awesome';
+
+// ======================================================================================
+// Bootstrap core variables and mixins
+// ======================================================================================
+
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+// @import '~react-datepicker/src/stylesheets/datepicker';
+
+//======================================================================================
+// Bootstrap Core CSS
+//======================================================================================
+
+// @import '~bootstrap/scss/print';
+// @import '~bootstrap/scss/reboot';
+// @import '~bootstrap/scss/type';
+// @import '~bootstrap/scss/images';
+// @import '~bootstrap/scss/code';
+// @import '~bootstrap/scss/grid';
+// @import '~bootstrap/scss/tables';
+// @import '~bootstrap/scss/forms';
+// @import '~bootstrap/scss/buttons';
+
+
+// ======================================================================================
+// Bootstrap Components
+// ======================================================================================
+
+// @import '~bootstrap/scss/transitions';
+// @import '~bootstrap/scss/dropdown';
+// @import '~bootstrap/scss/button-group';
+// @import '~bootstrap/scss/input-group';
+// @import '~bootstrap/scss/custom-forms';
+// @import '~bootstrap/scss/nav';
+@import '~bootstrap/scss/navbar';
+// // @import '~bootstrap/scss/card';
+// // @import '~bootstrap/scss/breadcrumb';
+// @import '~bootstrap/scss/pagination';
+// @import '~bootstrap/scss/badge';
+// // @import '~bootstrap/scss/jumbotron';
+// // @import '~bootstrap/scss/alert';
+// // @import '~bootstrap/scss/progress';
+// // @import '~bootstrap/scss/media';
+// // @import '~bootstrap/scss/list-group';
+// // @import '~bootstrap/scss/responsive-embed';
+// @import '~bootstrap/scss/close';
+// @import '~bootstrap/scss/utilities';
+
+
+//======================================================================================
+// Bootstrap components with javascript
+//======================================================================================
+
+// @import '~bootstrap/scss/modal';
+// @import '~bootstrap/scss/tooltip';
+// @import '~bootstrap/scss/popover';
+// @import '~bootstrap/scss/carousel';
+
+
+// ======================================================================================
+// Bootstrap utility classes
+// ======================================================================================
+
+// @import '~bootstrap/scss/utilities';
+
+
+// ======================================================================================
+// Custom base styles
+// ======================================================================================
+
+@import '../common/mixins';
+@import '../common/base';
+@import '../common/util';
+@import '../common/layout';
+
+
+// ======================================================================================
+// Custom components
+// ======================================================================================
+
+// @import '../components/card';
+// @import '../components/spinner';
+// @import '../components/avatar';
+// @import '../components/card-loader';
+// @import '../components/buttons';
+// @import '../components/loading-indicator';
+// @import '../components/component-loader';
+// @import '../components/pagination';
+// @import '../components/forms';
+// @import '../components/navbar';
+// @import '../components/tables';
+// @import '../components/alerts';
+// @import '../components/media';
+// @import '../components/header';
+// @import '../components/tabs';
+// @import '../components/dialog';
+// @import '../components/dropdown';
+// @import '../components/upload-placeholder';
+// @import '../components/sub-header';
+// @import '../components/logos';
+// @import '../components/error-list';
+// @import '../components/datepicker';
+// @import '../components/info-card';
+// @import '../components/result-list';
+// @import '../components/badge';
+
+
+// ======================================================================================
+// Scpecific stlyes
+// ======================================================================================
+
+// @import '../specific/dashboard';
+// @import '../specific/product-images';
