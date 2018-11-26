@@ -4,6 +4,7 @@ const flexbugs = require('postcss-flexbugs-fixes');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+var path = require('path');
 
 const isDebug = process.env.NODE_ENV !== 'production';
 
@@ -33,6 +34,11 @@ function configureCssLoader() {
 }
 
 module.exports = {
+    entry: { main: './src/app.js' },
+    output: {
+      path: path.resolve(__dirname, 'dist'),
+      filename: 'main.js'
+    },
     module: {
         rules: [
             {
@@ -63,11 +69,15 @@ module.exports = {
             //         "sass-loader" // compiles Sass to CSS, using Node Sass by default
             //     ]
             // }
+            // {
+            //     test: /\.scss$/,
+            //     exclude: /node_modules/,
+            //     use: configureCssLoader()
+            // },
             {
                 test: /\.scss$/,
-                exclude: /node_modules/,
-                use: configureCssLoader()
-            },
+                use:  [  'style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+            }
         ]
     },
     plugins: [

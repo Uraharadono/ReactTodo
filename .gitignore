@@ -4,3 +4,4 @@ node_modules/
 
 # Ignore dist files
 dist/
+npm-debug.log.4221217784

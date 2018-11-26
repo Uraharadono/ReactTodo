@@ -3,24 +3,24 @@
 // Styles that affect the entire application
 // ======================================================================================
 
-body {
-    color: $color-purple-dark;
-    background-color: #f5f4f8;
-    -webkit-font-smoothing: antialiased;
-}
+// body {
+//     color: $color-purple-dark;
+//     background-color: #f5f4f8;
+//     -webkit-font-smoothing: antialiased;
+// }
 
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 400;
-}
+// h1, h2, h3, h4, h5, h6 {
+//     font-weight: 400;
+// }
 
-h1 { font-size: modular-scale(4, $font-size-base); }
-h2 { font-size: modular-scale(3, $font-size-base); }
-h3 { font-size: modular-scale(2, $font-size-base); }
-h4 { font-size: modular-scale(1, $font-size-base); }
-h5 { font-size: modular-scale(0, $font-size-base); }
-h6 { font-size: 0.75rem; }
+// h1 { font-size: modular-scale(4, $font-size-base); }
+// h2 { font-size: modular-scale(3, $font-size-base); }
+// h3 { font-size: modular-scale(2, $font-size-base); }
+// h4 { font-size: modular-scale(1, $font-size-base); }
+// h5 { font-size: modular-scale(0, $font-size-base); }
+// h6 { font-size: 0.75rem; }
 
-small {
-    font-size: 0.8125rem;
-    color: #7f8fa4;
-}
+// small {
+//     font-size: 0.8125rem;
+//     color: #7f8fa4;
+// }

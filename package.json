@@ -7,10 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "//this command will fallback to default src/index.js file to build// build": "webpack --mode development",
     "//this command will fallback to default src/index.js file to build// build-production": "webpack --mode production",
-    "build": "webpack --mode development ./src/app.js --output ./dist/main.js",
-    "build-production": "webpack --mode production ./src/app.js --output ./dist/main.js",
+    "build": "webpack --mode development",
+    "build-production": "webpack --mode production",
     "// barebone webpack dev server config  //dev": "webpack-dev-server --mode --open",
-    "dev": "webpack-dev-server --mode development ./src/app.js --output ./dist/main.js --open",
+    "dev": "webpack-dev-server --mode development --open",
     "lint": "eslint \"src/**/*.{js,jsx}\""
   },
   "repository": {
