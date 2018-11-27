@@ -25,4 +25,5 @@ Here are routes defined in the separate file: https://alligator.io/react/react-r
 5.) Error handling. I had a lot of issues with configuring import syntax for importing scss files then bundling them together. This article is great to get a good grip how to handle css:
 - https://hackernoon.com/a-tale-of-webpack-4-and-how-to-finally-configure-it-in-the-right-way-4e94c8e7e5c1
  
-This article shows in a way how to do it step by step: https://stevenwestmoreland.com/2018/01/how-to-include-bootstrap-in-your-project-with-webpack.html?fbclid=IwAR0IMbJm5WdMGUOD2fRu0-_8AglnZg57VZ4lKE0dh8s7mjfp0lspibz6lJY
+This article shows in a way how to do it step by step: 
+- https://stevenwestmoreland.com/2018/01/how-to-include-bootstrap-in-your-project-with-webpack.html?fbclid=IwAR0IMbJm5WdMGUOD2fRu0-_8AglnZg57VZ4lKE0dh8s7mjfp0lspibz6lJY
