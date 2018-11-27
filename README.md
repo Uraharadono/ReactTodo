@@ -3,7 +3,8 @@ Simple pure React web todo list created while I was getting a hold of basic and 
 
 
 
-React learning path:
+### React learning path:
+
 1.) Brian Holt - Frontend masters - Introduction to React v4
 https://frontendmasters.com/courses/complete-react-v4/
  
