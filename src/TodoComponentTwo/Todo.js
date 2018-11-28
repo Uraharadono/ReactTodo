@@ -66,6 +66,21 @@ class Todo2 extends React.Component {
         });
     }
 
+    deleteItem = (event, item) => {
+        event.preventDefault();
+        // damn son: https://stackoverflow.com/questions/15995963/javascript-remove-array-element-on-condition
+        let items = this.state.todoItems.filter(aItem => {
+            return !(
+                item.isActive === aItem.isActive &&
+                item.number === aItem.number &&
+                item.name === aItem.name
+            )
+        });
+        this.setState({
+            todoItems: items
+        });
+    }
+
     render() {
         return (
             <div>
@@ -114,8 +129,9 @@ class Todo2 extends React.Component {
                         <thead className="thead-dark">
                             <tr className="d-flex">
                                 <th className="col-2">Index</th>
-                                <th className="col-8">Name</th>
+                                <th className="col-6">Name</th>
                                 <th className="col-2">Is active</th>
+                                <th className="col-2"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -124,11 +140,16 @@ class Todo2 extends React.Component {
                                     return (
                                         <tr className="d-flex" key={item.number}>
                                             <td className="col-2">{item.number}</td>
-                                            <td className="col-8">{item.name}</td>
+                                            <td className="col-6">{item.name}</td>
                                             <td className="col-2">
                                                 <div className="custom-control custom-checkbox">
                                                     <input type="checkbox" className="custom-control-input" checked={item.isActive} readOnly />
                                                 </div>
+                                            </td>
+                                            <td className="col-2">
+                                                <button type="button" className="btn btn-outline-danger" onClick={((e) => this.deleteItem(e, item))}>Danger</button>
+                                                &nbsp;
+                                                <button type="button" className="btn btn-outline-info">Edit</button>
                                             </td>
                                         </tr>
                                     )

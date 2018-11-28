@@ -66,6 +66,21 @@ class Todo extends React.Component {
         });
     }
 
+    deleteItem = (event, item) => {
+        event.preventDefault();
+        // damn son: https://stackoverflow.com/questions/15995963/javascript-remove-array-element-on-condition
+        let items = this.state.todoItems.filter(aItem => {
+            return !(
+                item.isActive === aItem.isActive &&
+                item.number === aItem.number &&
+                item.name === aItem.name
+            )
+        });
+        this.setState({
+            todoItems: items
+        });
+    }
+
     render() {
         return (
             <div>
@@ -114,8 +129,9 @@ class Todo extends React.Component {
                         <thead className="thead-dark">
                             <tr className="d-flex">
                                 <th className="col-2">Index</th>
-                                <th className="col-8">Name</th>
+                                <th className="col-6">Name</th>
                                 <th className="col-2">Is active</th>
+                                <th className="col-2"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -125,7 +141,8 @@ class Todo extends React.Component {
                                         number={item.number}
                                         name={item.name}
                                         key={item.number}
-                                        isActive={item.isActive} />
+                                        isActive={item.isActive} 
+                                        deleteItem={this.deleteItem}/>
                                 })
                             }
                         </tbody>
