@@ -42,14 +42,12 @@ class App extends React.Component {
                                  </Link>
                                     {/* <a className="nav-link" href="#">Pricing</a> */}
                                 </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="#">About</a>
-                                </li>
                             </ul>
                         </div>
                     </nav>
-
-                    {routeComponents}
+                    <div className="container">
+                        {routeComponents}
+                    </div>
                 </div>
             </Router >
         );
