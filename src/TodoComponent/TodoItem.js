@@ -8,7 +8,7 @@ export default class TodoItem extends React.Component {
     render() {
         return (
             <tr className="d-flex">
-                <td className="col-2">{this.props.number}</td>
+                <td className="col-2">{this.props.id}</td>
                 <td className="col-6">{this.props.name}</td>
                 <td className="col-2">
                     <div className="custom-control custom-checkbox">
@@ -19,7 +19,7 @@ export default class TodoItem extends React.Component {
                 {/* <button type="button" className="btn btn-outline-danger" onClick={this.props.deleteItem(this.props)}>Danger</button> */}
                 <button type="button" className="btn btn-outline-danger" onClick={((e) => this.props.deleteItem(e, this.props))}>Danger</button>
                 &nbsp;
-                <button type="button" className="btn btn-outline-info">Edit</button>
+                <button type="button" className="btn btn-outline-info" onClick={((e) => this.props.setAsEditItem(e, this.props))}>Edit</button>
                 </td>
             </tr>
         );

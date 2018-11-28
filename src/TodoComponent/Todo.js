@@ -2,30 +2,32 @@ import React from "react";
 import TodoItem from "./TodoItem";
 
 class Todo extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = {
             name: "",
             isActive: false,
+            id: -1,
             todoItems: [
 
                 {
-                    number: 1,
+                    id: 1,
                     name: "Test 1",
                     isActive: false
                 },
                 {
-                    number: 2,
+                    id: 2,
                     name: "Test 2",
                     isActive: false
                 },
                 {
-                    number: 3,
+                    id: 3,
                     name: "Test 3",
                     isActive: true
                 },
                 {
-                    number: 4,
+                    id: 4,
                     name: "Test 4",
                     isActive: true
                 }
@@ -48,15 +50,47 @@ class Todo extends React.Component {
 
     manageItem = (event) => {
         event.preventDefault();
-        this.addNewItem();
+
+        const isEdit = !(this.state.todoItems.find(item => {
+            return item.id === this.state.id;
+        }) == undefined);
+
+        if (isEdit)
+            this.editItem();
+        else
+            this.addNewItem();
+
+        this.clearInput();
     };
+
+    clearInput() {
+        this.setState({
+            id: -1, 
+            name: "",
+            isActive: false
+        });
+    }
+    
+    editItem() {
+        let items = this.state.todoItems;
+        var itemIndex = items.findIndex(item => {
+            return item.id === this.state.id;
+        });
+
+        items[itemIndex].isActive = this.state.isActive;
+        items[itemIndex].name = this.state.name;
+
+        this.setState({
+            todoItems: items            
+        });
+    }
 
     addNewItem() {
         let items = this.state.todoItems;
-        const nextIndex = items[items.length - 1].number + 1;
+        const nextIndex = items[items.length - 1].id + 1;
 
         items.push({
-            number: nextIndex,
+            id: nextIndex,
             name: this.state.name,
             isActive: this.state.isActive
         });
@@ -72,12 +106,21 @@ class Todo extends React.Component {
         let items = this.state.todoItems.filter(aItem => {
             return !(
                 item.isActive === aItem.isActive &&
-                item.number === aItem.number &&
+                item.id === aItem.id &&
                 item.name === aItem.name
             )
         });
         this.setState({
             todoItems: items
+        });
+    }
+
+    setAsEditItem = (event, item) => {
+        event.preventDefault();
+        this.setState({
+            name: item.name,
+            isActive: item.isActive,
+            id: item.id
         });
     }
 
@@ -104,7 +147,7 @@ class Todo extends React.Component {
                         <div className="col-sm-10">
                             <div className="form-check">
                                 <input className="form-check-input" type="checkbox" id="itemActive"
-                                    value={this.state.isActive}
+                                    checked={this.state.isActive}
                                     onChange={this.handleIsActiveChange}
                                 />
                                 <label className="form-check-label" htmlFor="itemActive">
@@ -113,12 +156,10 @@ class Todo extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div className="">
-                        <div className="clearfix">
-                            <button type="submit" className="btn btn-outline-primary float-right">
-                                Add
-                            </button>
-                        </div>
+                    <div className="clearfix">
+                        <button type="submit" className="btn btn-outline-primary float-right">
+                            Save
+                        </button>
                     </div>
                 </form>
 
@@ -138,11 +179,12 @@ class Todo extends React.Component {
                             {
                                 this.state.todoItems.map(item => {
                                     return <TodoItem
-                                        number={item.number}
+                                        id={item.id}
                                         name={item.name}
-                                        key={item.number}
-                                        isActive={item.isActive} 
-                                        deleteItem={this.deleteItem}/>
+                                        key={item.id}
+                                        isActive={item.isActive}
+                                        deleteItem={this.deleteItem}
+                                        setAsEditItem={this.setAsEditItem} />
                                 })
                             }
                         </tbody>

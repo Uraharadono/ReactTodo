@@ -7,25 +7,26 @@ class Todo2 extends React.Component {
         this.state = {
             name: "",
             isActive: false,
+            id: -1,
             todoItems: [
 
                 {
-                    number: 1,
+                    id: 1,
                     name: "Test 1",
                     isActive: false
                 },
                 {
-                    number: 2,
+                    id: 2,
                     name: "Test 2",
                     isActive: false
                 },
                 {
-                    number: 3,
+                    id: 3,
                     name: "Test 3",
                     isActive: true
                 },
                 {
-                    number: 4,
+                    id: 4,
                     name: "Test 4",
                     isActive: true
                 }
@@ -48,15 +49,47 @@ class Todo2 extends React.Component {
 
     manageItem = (event) => {
         event.preventDefault();
-        this.addNewItem();
+
+        const isEdit = !(this.state.todoItems.find(item => {
+            return item.id === this.state.id;
+        }) == undefined);
+
+        if (isEdit)
+            this.editItem();
+        else
+            this.addNewItem();
+
+        this.clearInput();
     };
+
+    clearInput() {
+        this.setState({
+            id: -1,
+            name: "",
+            isActive: false
+        });
+    }
+
+    editItem() {
+        let items = this.state.todoItems;
+        var itemIndex = items.findIndex(item => {
+            return item.id === this.state.id;
+        });
+
+        items[itemIndex].isActive = this.state.isActive;
+        items[itemIndex].name = this.state.name;
+
+        this.setState({
+            todoItems: items
+        });
+    }
 
     addNewItem() {
         let items = this.state.todoItems;
-        const nextIndex = items[items.length - 1].number + 1;
+        const nextIndex = items[items.length - 1].id + 1;
 
         items.push({
-            number: nextIndex,
+            id: nextIndex,
             name: this.state.name,
             isActive: this.state.isActive
         });
@@ -72,12 +105,21 @@ class Todo2 extends React.Component {
         let items = this.state.todoItems.filter(aItem => {
             return !(
                 item.isActive === aItem.isActive &&
-                item.number === aItem.number &&
+                item.id === aItem.id &&
                 item.name === aItem.name
             )
         });
         this.setState({
             todoItems: items
+        });
+    }
+
+    setAsEditItem = (event, item) => {
+        event.preventDefault();
+        this.setState({
+            name: item.name,
+            isActive: item.isActive,
+            id: item.id
         });
     }
 
@@ -113,12 +155,10 @@ class Todo2 extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div className="">
-                        <div className="clearfix">
-                            <button type="submit" className="btn btn-outline-primary float-right">
-                                Add
+                    <div className="clearfix">
+                        <button type="submit" className="btn btn-outline-primary float-right">
+                            Save
                             </button>
-                        </div>
                     </div>
                 </form>
 
@@ -138,8 +178,8 @@ class Todo2 extends React.Component {
                             {
                                 this.state.todoItems.map(item => {
                                     return (
-                                        <tr className="d-flex" key={item.number}>
-                                            <td className="col-2">{item.number}</td>
+                                        <tr className="d-flex" key={item.id}>
+                                            <td className="col-2">{item.id}</td>
                                             <td className="col-6">{item.name}</td>
                                             <td className="col-2">
                                                 <div className="custom-control custom-checkbox">
@@ -149,7 +189,7 @@ class Todo2 extends React.Component {
                                             <td className="col-2">
                                                 <button type="button" className="btn btn-outline-danger" onClick={((e) => this.deleteItem(e, item))}>Danger</button>
                                                 &nbsp;
-                                                <button type="button" className="btn btn-outline-info">Edit</button>
+                                                <button type="button" className="btn btn-outline-info" onClick={((e) => this.setAsEditItem(e, item))}>Edit</button>
                                             </td>
                                         </tr>
                                     )

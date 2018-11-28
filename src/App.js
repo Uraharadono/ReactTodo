@@ -33,12 +33,12 @@ class App extends React.Component {
                                 <li className="nav-item">
                                     {/* <a className="nav-link" href="#">Features</a> */}
                                     <Link to="todo-list" className="nav-link">
-                                        Todo list
+                                        Todo list (multi file)
                                  </Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link to="todo-list-2" className="nav-link">
-                                        Todo list 2
+                                        Todo list (single file)
                                  </Link>
                                     {/* <a className="nav-link" href="#">Pricing</a> */}
                                 </li>
