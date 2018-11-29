@@ -1,16 +1,13 @@
 import React from "react";
 import TodoItem from "./TodoItem";
+import TodoManageComponent from "./TodoManageComponent";
 
 class Todo extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            name: "",
-            isActive: false,
-            id: -1,
             todoItems: [
-
                 {
                     id: 1,
                     name: "Test 1",
@@ -33,68 +30,33 @@ class Todo extends React.Component {
                 }
             ]
         };
+
+        // This is our reference to the child component 
+        // seen here: https://stackoverflow.com/questions/37949981/call-child-method-from-parent
+        // answered by: rossipedia
+        this.todoManageComponent = React.createRef();        
     }
 
-    handleNameChange = event => {
-        this.setState({
-            name: event.target.value
-        });
-    };
-
-    handleIsActiveChange = () => {
-        this.setState({
-            // isActive: event.target.value
-            isActive: !this.state.isActive
-        });
-    };
-
-    manageItem = (event) => {
-        event.preventDefault();
-
-        const isEdit = !(this.state.todoItems.find(item => {
-            return item.id === this.state.id;
-        }) == undefined);
-
-        if (isEdit)
-            this.editItem();
-        else
-            this.addNewItem();
-
-        this.clearInput();
-    };
-
-    clearInput() {
-        this.setState({
-            id: -1, 
-            name: "",
-            isActive: false
-        });
-    }
-    
-    editItem() {
+    editItem = (item) => {
         let items = this.state.todoItems;
-        var itemIndex = items.findIndex(item => {
-            return item.id === this.state.id;
+        var itemIndex = items.findIndex(todoItem => {
+            return todoItem.id === item.id;
         });
 
-        items[itemIndex].isActive = this.state.isActive;
-        items[itemIndex].name = this.state.name;
+        items[itemIndex].isActive = item.isActive;
+        items[itemIndex].name = item.name;
 
         this.setState({
-            todoItems: items            
+            todoItems: items
         });
     }
 
-    addNewItem() {
+    addItem = (item) => {
         let items = this.state.todoItems;
         const nextIndex = items[items.length - 1].id + 1;
+        item.id = nextIndex;
 
-        items.push({
-            id: nextIndex,
-            name: this.state.name,
-            isActive: this.state.isActive
-        });
-
+        items.push(item);
         this.setState({
             todoItems: items
         });
@@ -117,11 +79,7 @@ class Todo extends React.Component {
 
     setAsEditItem = (event, item) => {
         event.preventDefault();
-        this.setState({
-            name: item.name,
-            isActive: item.isActive,
-            id: item.id
-        });
+        this.todoManageComponent.current.setValues(item);
     }
 
     render() {
@@ -132,36 +90,11 @@ class Todo extends React.Component {
                     <strong> Note: </strong>This todo has all functionalities separated in as many files as it makes sense.
                 </h5>
                 <hr />
-                <form onSubmit={this.manageItem}>
-                    <div className="form-group row">
-                        <label htmlFor="itemName" className="col-sm-2 col-form-label" >Name</label>
-                        <div className="col-sm-10">
-                            <input type="text" className="form-control" id="itemName"
-                                value={this.state.name}
-                                onChange={this.handleNameChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="form-group row">
-                        <div className="col-sm-2">Active</div>
-                        <div className="col-sm-10">
-                            <div className="form-check">
-                                <input className="form-check-input" type="checkbox" id="itemActive"
-                                    checked={this.state.isActive}
-                                    onChange={this.handleIsActiveChange}
-                                />
-                                <label className="form-check-label" htmlFor="itemActive">
-                                    Example checkbox
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="clearfix">
-                        <button type="submit" className="btn btn-outline-primary float-right">
-                            Save
-                        </button>
-                    </div>
-                </form>
+                <TodoManageComponent
+                    ref={this.todoManageComponent}
+                    editItem={this.editItem}
+                    addItem={this.addItem}
+                ></TodoManageComponent>
 
                 <div className="form-group row"></div>
 

@@ -149,9 +149,9 @@ class Todo2 extends React.Component {
                                     value={this.state.isActive}
                                     onChange={this.handleIsActiveChange}
                                 />
-                                <label className="form-check-label" htmlFor="itemActive">
+                                {/* <label className="form-check-label" htmlFor="itemActive">
                                     Example checkbox
-                                </label>
+                                </label> */}
                             </div>
                         </div>
                     </div>
