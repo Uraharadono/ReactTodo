@@ -1,0 +1,71 @@
+// ======================================================================================
+// Timepicker
+// ======================================================================================
+
+.timepicker {
+    position: relative;
+    display: inline-block;
+}
+
+.timepicker > .form-control {
+    width: 5rem;
+    text-align: center;
+    margin: 0;
+}
+
+.react-datepicker-wrapper,
+.react-datepicker__input-container {
+    width: 100%;
+}
+
+.react-datepicker__time,
+.react-datepicker__time-container  {
+    width: 100%;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box {
+    width: 100%;
+    overflow-x: visible;
+}
+
+.form-group.it-has-no-label{
+    margin-bottom: 0px;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list {
+    padding: 0px;
+}
+
+.react-datepicker__header.react-datepicker__header--time{
+    display: none;
+}
+
+.react-datepicker {
+    left: 0;
+    top: calc(100% + 0.5rem);
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+}
+
+
+// ======================================================================================
+// Time range picker
+// ======================================================================================
+
+.time-range-picker-content {
+    display: flex;
+    align-items: center;
+}
+
+.time-range-picker-section {
+    margin-right: 0.75rem;
+
+    span {
+        padding-right: 0.75rem;
+    }
+}
+
+.time-range-picker > .invalid-feedback {
+    display: block;
+}

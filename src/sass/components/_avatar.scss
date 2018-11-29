@@ -1,0 +1,63 @@
+// ======================================================================================
+// Avatar
+// ======================================================================================
+
+.avatar {
+    display: flex;
+    align-items: center;
+}
+
+.avatar-icon {
+    background-color: $color-gray-base;
+    width: 3.1em;
+    height: 3.1em;
+    border-radius: 50%;
+    margin-right: 1.5em;
+    position: relative;
+
+    &:before {
+        content: '';
+        display: block;
+        width: 1.4em;
+        height: 1.4em;
+        border-radius: 50%;
+        background-color: #fff;
+        position: absolute;
+        bottom: -2px;
+        right: -2px;
+        z-index: 10;
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        width: 1em;
+        height: 1em;
+        border-radius: 50%;
+        background-color: #fff;
+        border: 3px solid $color-green-light;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 20;
+    }
+}
+
+.avatar-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $color-blue-light;
+    display: block;
+    user-select: none;
+    line-height: 1;
+    margin-bottom: 3px;
+}
+
+.avatar-role {
+    font-size: 0.875rem;
+    font-weight: 600;
+    user-select: none;
+    color: $color-gray-dark;
+    display: block;
+    line-height: 1;
+}

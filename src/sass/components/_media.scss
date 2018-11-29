@@ -1,0 +1,139 @@
+// ======================================================================================
+// Media
+// ======================================================================================
+
+.media-list .media,
+.media-list .media-block {
+    border-bottom: 1px solid #e9ecef;
+
+    &:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+}
+
+.media-list .media-block:last-child {
+    margin-bottom: 1.5rem;
+}
+
+.media-list:not(.it-has-no-border) .media:first-child,
+.media-list:not(.it-has-no-border) .media-block:first-child {
+    border-top: 1px solid #e9ecef;
+}
+
+.media {
+    display: flex;
+    align-items: center;
+}
+
+.media,
+.media-block {
+    padding: 0.75rem 0;
+}
+
+.media-image {
+    margin-right: 0.75rem;
+    position: relative;
+
+    &.it-has-image {
+        width: 3rem;
+        height: 3rem;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+
+    &.it-has-video {
+        height: 3rem;
+        overflow: hidden;
+        border-radius: 5px;
+    }
+
+    .media-play-icon {
+        position: absolute;
+        color: #fff;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+    }
+
+    img {
+        width: 3rem;
+    }
+}
+
+.media-date {
+    min-width: 100px;
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-right: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.store-image img {
+    height: 3rem;
+    width: auto;
+}
+
+.media-body {
+    display: flex;
+    flex-direction: column;
+
+    h5 {
+        margin: 0;
+    }
+
+    .media-description {
+        display: flex;
+        align-items: center;
+
+        small {
+            margin-right: 0.5rem;
+            &:last-child { margin-right: 0; }
+        }
+    }
+
+    .remarks {
+        word-break: break-all;
+    }
+
+    &.it-has-left-border {
+        border-left: 1px solid #e9ecef;
+        padding-left: 1rem;
+    }
+}
+
+.media-body,
+.media-block-body,
+.media-block-header {
+    h5 {
+        font-weight: 500;
+    }
+}
+
+.media-block-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+
+    h5 { margin-right: auto; }
+    h5, .form-group { margin-bottom: 0; }
+}
+
+.media-controls {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    padding-left: 1.75em;
+
+    .btn:not(:last-child),
+    .btn-icon:not(:last-child) { margin-right: 0.3rem; }
+}
+
+.media-pagination {
+    margin-top: 1rem;
+}

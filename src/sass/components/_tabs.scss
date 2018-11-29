@@ -1,0 +1,100 @@
+// ======================================================================================
+// Tabs
+// ======================================================================================
+
+.tab-container.it-is-empty {
+    padding-bottom: 1.3rem;
+}
+
+.nav-tabs {
+    margin: 0;
+    padding: 0 1.3rem;
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid #e6eaee;
+    border-bottom: 1px solid #e6eaee;
+
+    .nav-item {
+        list-style: none;
+        margin-right: 1rem;
+
+        &:last-of-type {
+            margin-right: auto;
+        }
+
+        &.active-tab .nav-link {
+            border-color: $color-blue-light;
+        }
+    }
+
+    .nav-link {
+        margin: 0;
+        display: block;
+        line-height: 1;
+        padding: 0.65rem 0;
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: #56688a;
+        border-bottom: 2px solid transparent;
+
+        &:hover {
+            border-color: $color-blue-light;
+            cursor: pointer;
+        }
+
+        &.it-has-button {
+            .btn-icon {
+                padding: 0;
+                margin: 0 0 0 0.4rem;
+            }
+
+            .fa {
+                margin: 0;
+                line-height: 1;
+                font-size: 0.875rem;
+            }
+        }
+    }
+}
+
+.tab-info {
+    padding: 0.65rem 0;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #818ea7;
+    list-style: none;
+}
+
+.tab-panel {
+    padding: 1.3rem;
+
+    &:not(.tab-panel-selected) {
+        display: none;
+    }
+}
+
+.tab-dropdown {
+    align-self: center;
+    margin-left: auto;
+    background-color: transparent;
+    list-style: none;
+}
+
+.tab-btn-dropdown {
+    @extend .btn-icon;
+
+    padding: 3px !important;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background: none !important;
+        box-shadow: none !important;
+        color: $color-blue-light !important;
+    }
+
+    .fa {
+        margin: 0 !important;
+    }
+}
+

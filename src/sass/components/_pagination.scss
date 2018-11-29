@@ -1,0 +1,47 @@
+// ======================================================================================
+// Pagination
+// ======================================================================================
+
+.pagination {
+    margin-bottom: 0;
+}
+
+.pagination > .page-item {
+    margin-right: 5px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &.active > .page-link {
+        color: #fff;
+        cursor: default;
+    }
+
+    &:not(.active) > .page-link {
+        &:active,
+        &:focus {
+            background-color: #fff;
+        }
+    }
+}
+
+.pagination > .page-item > .page-link {
+    border: none;
+    font-weight: 500;
+    color: $color-gray-dark;
+    border-radius: 5px;
+    line-height: 1;
+    font-size: 0.875rem;
+
+    .fa {
+        font-size: 0.8125rem;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        border: none;
+        box-shadow: none;
+    }
+}

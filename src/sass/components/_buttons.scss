@@ -1,0 +1,215 @@
+// ======================================================================================
+// General
+// ======================================================================================
+
+.btn {
+    font-weight: 600;
+
+    &:not(:disabled) {
+        cursor: pointer;
+    }
+
+    &:disabled {
+        pointer-events: none;
+    }
+
+    &:not(.btn-toggle) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        border-radius: 4px;
+
+        .fa { margin-right: 0.5rem; }
+    }
+
+    &:focus,
+    &:hover,
+    &:active {
+        box-shadow: none;
+    }
+}
+
+
+// ======================================================================================
+// Icon button
+// Only icon that acts as a button
+// ======================================================================================
+
+.btn-icon {
+    padding: 3px;
+    background: none;
+    outline: none;
+    border: none;
+    color: $color-gray-dark;
+    line-height: 1;
+
+    &:hover,
+    &:focus,
+    &:active {
+        border: none;
+        outline: none;
+        box-shadow: none;
+    }
+
+    &:not(:disabled) {
+        cursor: pointer;
+    }
+
+    &:disabled {
+        pointer-events: none;
+    }
+}
+
+
+// ======================================================================================
+// Toggle button
+// ======================================================================================
+
+.btn-toggle {
+    border: none;
+    outline: none;
+    box-shadow: none;
+
+    .fa {
+        margin: 0;
+        font-size: 0.875rem;
+        line-height: 1;
+
+        &.fa-th-list { margin-top: 3px; }
+    }
+
+    &:hover,
+    &:focus
+    &:active {
+        border: none;
+        outline: none;
+        box-shadow: none;
+        z-index: auto !important;
+    }
+}
+
+// ======================================================================================
+// Variations
+// ======================================================================================
+
+.btn.btn-primary {
+    background-color: $color-blue-light;
+
+    &:hover {
+        background-color: $color-blue-base;
+    }
+
+    &:active,
+    &:focus {
+        background-color: $color-blue-dark;
+    }
+
+    &:not(.btn-circle) {
+        border: 1px solid #1585d8;
+    }
+}
+
+.btn.btn-outline-secondary {
+    background-color: #fff;
+    border: 1px solid #ced0da !important;
+    color: #354052;
+
+    &:hover {
+        background-color: #354052;
+        color: #fff;
+    }
+    &:active {
+        background-color: #354052;
+        color: #fff;
+    }
+}
+
+.btn-icon-primary {
+    &:hover {
+        color: $color-blue-light;
+    }
+
+    &:active,
+    &:focus {
+        color: $color-blue-dark;
+    }
+}
+
+.btn.btn-success {
+    background-color: $color-green-light;
+
+    &:hover {
+        background-color: $color-green-base;
+    }
+
+    &:active,
+    &:focus {
+        background-color: $color-green-dark;
+    }
+}
+
+.btn.btn-outline-muted {
+    background-color: transparent;
+    border: 4px solid #2d3848;
+
+    .fa {
+        color: #2d3848;
+    }
+
+    &:hover {
+        border-color: $color-midnight-blue-light;
+        .fa { color: $color-midnight-blue-light; }
+    }
+}
+
+.btn.btn-outline-gray {
+    background-color: transparent;
+    border: 4px solid #e6eaee;
+
+    .fa {
+        color: #e6eaee;
+    }
+
+    &:hover {
+        border-color: $color-gray-dark;
+        .fa { color: $color-gray-dark; }
+    }
+}
+
+.btn-icon-success {
+    &:hover {
+        color: $color-green-light;
+    }
+
+    &:active,
+    &:focus {
+        color: $color-green-dark;
+    }
+}
+
+.btn-icon-danger {
+    &:hover {
+        color: $color-red-light;
+    }
+
+    &:active,
+    &:focus {
+        color: $color-red-dark;
+    }
+}
+
+
+// ======================================================================================
+// Close
+// ======================================================================================
+
+.close {
+    cursor: pointer;
+
+    &:hover,
+    &:focus,
+    &:active {
+        border: none;
+        outline: none;
+        box-shadow: none;
+    }
+}

@@ -1,0 +1,52 @@
+// ======================================================================================
+// Info card styles
+// ======================================================================================
+
+.info-card-wrap {
+    max-width: 60em;
+}
+
+.info-card {
+    margin: 6em 0 0;
+    background: #fff;
+    border-radius: 7px;
+    border: 1px solid rgba(93, 85, 119, 0.1);
+}
+
+.info-card-header {
+    display: flex;
+    padding: 1.75rem 2rem;
+    align-items: center;
+    border-bottom: 1px solid #f8f8fa;
+    color: #743290;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+
+    .fa { margin-right: 1rem; }
+    h4 { margin: 0; line-height: 1; }
+}
+
+.info-card-content {
+    display: flex;
+}
+
+.info-card-section {
+    width: 100%;
+    padding: 4rem 2rem;
+}
+
+.info-card-section-sm {
+    width: 100%;
+    padding: 1.3rem;
+}
+
+.info-card-right {
+    .btn { margin-top: 1rem; }
+    .alert { margin-bottom: 2rem; }
+}
+
+.info-card-left {
+    h2 { margin-bottom: 2rem; }
+    p { margin-bottom: 1.5rem; color: #9b8fad; }
+}
+

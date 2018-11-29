@@ -1,0 +1,58 @@
+// ======================================================================================
+// Subheader
+// ======================================================================================
+
+.sub-header {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $color-gray-base;
+    margin-bottom: 1.75em;
+    padding: 1em 1.75em;
+
+    &.has-menu {
+        padding: 0;
+    }
+
+    &.has-menu .sub-header-control-list {
+        padding-right: 1.75rem;
+    }
+}
+
+.sub-header-left {
+    display: flex;
+    align-items: center;
+}
+
+.sub-header-menu .nav-tabs {
+    border-top: none;
+    border-bottom: none;
+
+    .nav-link {
+        color: #9aa9bd;
+        text-decoration: none;
+        font-size: 1rem;
+        padding: 1.25rem 0.75rem 1.25rem 0.75rem;
+    }
+
+    .active-tab .nav-link {
+        color: #56688a;
+    }
+}
+
+.sub-header-right,
+.sub-header-control-list {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+
+    .search-form .form-control {
+        min-width: 23.5rem;
+    }
+}
+
+.sub-header-control-list {
+    .btn:not(:last-child), .dropdown-wrap, .search-form {
+        margin-right: 0.5rem;
+    }
+}

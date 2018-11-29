@@ -1,12 +1,14 @@
 import React from "react";
 import TodoItem from "./TodoItem";
 import TodoManageComponent from "./TodoManageComponent";
+import ComponentLoader from '../components/ComponentLoader';
 
 class Todo extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
+            isLoading: true,
             todoItems: [
                 {
                     id: 1,
@@ -34,7 +36,15 @@ class Todo extends React.Component {
         // This is our reference to the child component 
         // seen here: https://stackoverflow.com/questions/37949981/call-child-method-from-parent
         // answered by: rossipedia
-        this.todoManageComponent = React.createRef();        
+        this.todoManageComponent = React.createRef();
+    }
+
+    componentDidMount() {
+        setTimeout(() => {
+            this.setState({
+                isLoading: false
+            });
+        }, 1300)
     }
 
     editItem = (item) => {
@@ -85,6 +95,8 @@ class Todo extends React.Component {
     render() {
         return (
             <div>
+                <ComponentLoader isVisible={this.state.isLoading} />
+
                 <h3> Add new item</h3>
                 <h5>
                     <strong> Note: </strong>This todo has all functionalities separated in as many files as it makes sense.

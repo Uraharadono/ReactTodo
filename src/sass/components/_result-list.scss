@@ -1,0 +1,145 @@
+// ======================================================================================
+// Result list
+// ======================================================================================
+
+.result-list-item {
+    border-radius: 0.25rem;
+    border: 1px solid #e0dfe2;
+    background-color: #fff;
+    margin-bottom: 1.3rem;
+}
+
+.result-list-item-success {
+    border-left: 4px solid $color-green-base;
+}
+
+.result-list-item-danger {
+    border-left: 4px solid $color-red-base;
+}
+
+.result-list-item-content {
+    display: flex;
+    align-items: center;
+    padding: 1.2rem;
+}
+
+.result-list-item-avatar {
+    display: flex;
+    align-items: center;
+    min-width: 25%;
+}
+
+.result-list-item-avatar-name {
+    margin-left: 1.3rem;
+
+    span, small {
+        display: block;
+    }
+
+    span {
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1;
+        margin-bottom: 2px;
+    }
+
+    small {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #7c8ca5;
+    }
+}
+
+.result-list-item-center {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+    flex-grow: 1;
+}
+
+.result-list-item-right {
+    display: flex;
+    align-items: center;
+
+    .result-list-item-icon {
+        margin-left: 1.3rem;
+    }
+}
+
+.result-list-item-column {
+    label {
+        color: #7c8ca5;
+        font-weight: 600;
+        margin-bottom: 2px;
+    }
+
+    strong.form-control-plaintext {
+        color: $color-black;
+    }
+}
+
+.result-list-item-alert-wrap {
+    padding: 0;
+
+    .alert {
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+        padding-left: 1.3rem;
+        padding-right: 1.3rem;
+        margin-bottom: 0;
+    }
+
+    .alert-info {
+        background: #f5f8fa;
+
+        .alert-content span {
+            color: #7f8fa4;
+        }
+    }
+}
+
+
+// ======================================================================================
+// Result list table
+// ======================================================================================
+
+.result-list-item-table {
+    margin-bottom: 0;
+}
+
+.result-list-item-table > thead > tr > th {
+    color: #7f8fa4;
+    background: #f5f8fa;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.result-list-item-table > tbody > tr > td {
+    color: $color-black;
+    font-weight: 600;
+    font-size: 0.875rem;
+    vertical-align: middle;
+
+    &:last-child {
+        width: 1%;
+    }
+}
+
+.result-list-item-table > tbody > tr:first-child > td {
+    border-top: none;
+}
+
+.result-list-item-table > tbody > tr > td:first-child,
+.result-list-item-table > thead > tr > th:first-child {
+    padding-left: 1.3rem;
+}
+
+.result-list-item-table > tbody > tr > td:last-child,
+.result-list-item-table > thead > tr > th:last-child {
+    padding-right: 1.3rem;
+}

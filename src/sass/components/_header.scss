@@ -1,0 +1,64 @@
+// ======================================================================================
+// Header
+// ======================================================================================
+
+.main-header {
+    padding: 1.2em 1.75em;
+    margin-bottom: 1.75em;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $color-gray-base;
+}
+
+.main-header-title {
+    flex: 1;
+    h3 { margin-bottom: 0; }
+}
+
+.main-header-actions {
+    padding-right: 3rem;
+}
+
+.main-header-avatar {
+    margin-left: auto;
+}
+
+.avatar-content-wrap {
+    text-align: left;
+    margin-right: 0.75rem;
+}
+
+.avatar-name {
+    color: $color-pink-dark;
+    padding-bottom: 2px;
+}
+
+.header-dropdown .dropdown-toggle {
+    background: #fff;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+
+    &::after {
+        color: $color-black;
+    }
+
+    &:focus,
+    &:active {
+        background: #fff !important;
+        border: none;
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+.header-dropdown.show > .btn-secondary.dropdown-toggle {
+    background: #fff;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}

@@ -1,0 +1,36 @@
+// ======================================================================================
+// Dialog
+// ======================================================================================
+
+.modal-body {
+    max-height: calc(100vh - 1.75rem * 2 - 8rem);
+    overflow-y: auto;
+}
+
+.modal-header .modal-title {
+    color: #818ea7;
+    font-size: 1rem;
+}
+
+.modal-body {
+    .tab-container.it-is-empty {
+        padding-bottom: 0;
+        .nav-tabs { border-bottom: none; }
+    }
+
+    &.it-has-min-height {
+        min-height: 20rem;
+    }
+}
+
+.modal-footer-controls {
+    margin-left: auto;
+}
+
+.modal-body-condensed {
+    padding: 0;
+}
+
+.modal-section {
+    padding: 1.3rem;
+}

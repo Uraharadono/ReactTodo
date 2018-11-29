@@ -1,0 +1,44 @@
+// ======================================================================================
+// Page loading indicator
+// ======================================================================================
+
+.page-loading-indicator {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.page-loading-indicator-content {
+    margin: 10% auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $color-gray-dark;
+
+    .spinner {
+        transform: scale(1.5);
+        margin-bottom: 2em;
+    }
+}
+
+.main-content-loading .page-loading-indicator {
+    position: static;
+    margin: auto;
+    width: auto;
+    height: auto;
+}
+
+.main-content-loading .page-loading-indicator-content {
+    margin-top: 0;
+    color: $color-gray-dark;
+
+    .spinner {
+        svg path,
+        svg rect {
+            fill: $color-gray-dark;
+        }
+    }
+}

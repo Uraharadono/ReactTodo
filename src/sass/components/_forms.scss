@@ -1,0 +1,246 @@
+// ======================================================================================
+// General
+// ======================================================================================
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.form-group {
+    margin-bottom: 0.75rem;
+
+    label {
+        font-size: 0.8125rem;
+        color: #818ea7;
+        margin: 0 0 5px 0;
+
+        &.label-uppercase {
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+    }
+
+    label:not(.col-form-label) {
+        line-height: 1;
+    }
+
+    label.strong {
+        font-size: 0.875rem;
+        font-weight: 600;
+    }
+
+    &.has-icon {
+        position: relative;
+        .form-control { padding-right: 2.25rem; }
+    }
+
+    .is-valid-icon,
+    .is-invalid-icon,
+    .is-loading-icon {
+        position: absolute;
+        top: 2rem;
+        right: 0.75rem;
+    }
+
+    &.it-has-no-label .is-valid-icon,
+    &.it-has-no-label .is-invalid-icon {
+        top: 0.655rem;
+    }
+
+    .is-valid-icon {
+        color: $color-green-light;
+    }
+
+    .is-invalid-icon {
+        color: $color-red-light;
+    }
+
+    .is-loading-icon {
+        color: $color-gray-dark;
+    }
+
+    .invalid-feedback {
+        color: $color-red-light;
+        margin-top: 2px;
+    }
+
+    .alert {
+        margin-top: 0.5rem;
+    }
+}
+
+.form-group-centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0rem;
+}
+
+.form-group-button-row {
+    display: flex;
+    align-items: center;
+    margin: 0.75rem 0 1rem 0;
+
+    .btn { margin-right: 0.75rem; }
+    .btn:last-child { margin-right: 0; }
+}
+
+
+// ======================================================================================
+// Editable forms
+// ======================================================================================
+
+.form-control {
+    color: $color-black;
+    border-color: #ced0da;
+    font-weight: 600;
+    display: block;
+    position: relative;
+    border-radius: 4px;
+
+    &:not(.is-invalid):not(.is-valid):focus {
+        border-color: $color-blue-light;
+    }
+
+    &.is-valid:focus {
+        border-color: $color-green-light;
+    }
+
+    &.is-invalid:focus {
+        border-color: $color-red-light;
+    }
+
+    &.is-expandable {
+        resize: none;
+    }
+
+    &:focus,
+    &:hover,
+    &:active {
+        box-shadow: none !important;
+        outline: none !important;
+    }
+
+    &:disabled,
+    &[readonly] {
+        color: $color-gray-dark;
+        background-color: #fcfdff;
+    }
+}
+
+textarea.form-control {
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.form-check-input {
+    margin-right: 1rem;
+}
+
+
+// ======================================================================================
+// Search form
+// ======================================================================================
+
+.search-form {
+    position: relative;
+
+    .form-control {
+        padding-right: 2.75rem;
+    }
+
+    .btn-icon {
+        position: absolute;
+        top: 50%;
+        right: 0.75rem;
+        transform: translateY(-50%);
+    }
+}
+
+
+// ======================================================================================
+// Headline input
+// ======================================================================================
+
+textarea.headline-input {
+    resize: none;
+    font-size: modular-scale(2, $font-size-base);
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    background-color: $color-gray-light;
+
+    &:focus {
+        background-color: $color-gray-light;
+    }
+}
+
+
+// ======================================================================================
+// Display forms
+// ======================================================================================
+
+.form-control-plaintext {
+    display: block;
+    color: #56688a;
+    padding: 0;
+    border: none;
+}
+
+strong.form-control-plaintext {
+    font-weight: 600;
+    line-height: 1;
+    font-size: 1rem;
+}
+
+p.form-control-plaintext {
+    line-height: 1.5;
+}
+
+.custom-control-label {
+    display: flex;
+    align-items: center;
+}
+
+.custom-checkbox .custom-control-input ~ .custom-control-label::before {
+    box-shadow: none;
+}
+
+
+// ======================================================================================
+// Inline controls
+// ======================================================================================
+
+.inline-controls {
+    display: flex;
+    align-items: center;
+    padding-bottom: 1rem;
+
+    .form-group {
+        margin: 0 0.75rem 0 0;
+    }
+
+    .search-form {
+        width: 100%;
+    }
+
+    .inline-control-item:not(:last-child) {
+        margin: 0 0.75rem 0 0;
+    }
+
+    .inline-control-item.grow {
+        width: 100%;
+    }
+
+    &.it-has-border-bottom {
+        padding-bottom: 1.3rem;
+        border-bottom: 1px solid #e9ecef;
+    }
+}

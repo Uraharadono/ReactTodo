@@ -1,10 +1,12 @@
 import React from "react";
+import ComponentLoader from '../components/ComponentLoader';
 
 class Todo2 extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
+            isLoading: true,
             name: "",
             isActive: false,
             id: -1,
@@ -32,6 +34,14 @@ class Todo2 extends React.Component {
                 }
             ]
         };
+    }
+
+    componentDidMount() {
+        setTimeout(() => {
+            this.setState({
+                isLoading: false
+            });
+        }, 1300)
     }
 
     handleNameChange = event => {
@@ -126,6 +136,8 @@ class Todo2 extends React.Component {
     render() {
         return (
             <div>
+                <ComponentLoader isVisible={this.state.isLoading} />
+
                 <h3> Add new item</h3>
                 <h5>
                     <strong> Note: </strong>This todo has all functionalities in one file.
