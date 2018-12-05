@@ -45,8 +45,8 @@ export default class TextInput extends Component {
         isModified: this.props.isValidationVisible
     }
 
-    componentDidMount(nextProps) {
-        this.setState({ isModified: nextProps.isValidationVisible });
+    componentWillReceiveProps(nextProps) {
+            this.setState({ isModified: nextProps.isValidationVisible });
     }
 
     handleChange = (event) => {
