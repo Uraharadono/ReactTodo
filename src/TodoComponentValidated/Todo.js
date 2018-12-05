@@ -99,7 +99,7 @@ class Todo extends React.Component {
 
                 <h3> Add new item</h3>
                 <h5>
-                    <strong> Note: </strong>This todo has all functionalities separated in as many files as it makes sense.
+                    <strong> Note: </strong>This todo has all functionalities separated in as many files as it makes sense and is validated.
                 </h5>
                 <hr />
                 <TodoManageComponent

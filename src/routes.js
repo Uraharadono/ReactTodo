@@ -1,5 +1,5 @@
-import TodoMultiFiles from "./TodoComponent/Todo";
-import TodoSingleFile from "./TodoComponentTwo/Todo";
+import TodoMultiFiles from "./TodoComponentMultiFiles/Todo";
+import TodoSingleFile from "./TodoComponentSingleFile/Todo";
 import TodoComponentValidated from "./TodoComponentValidated/Todo";
 
 
