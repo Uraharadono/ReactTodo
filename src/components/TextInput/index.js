@@ -45,7 +45,7 @@ export default class TextInput extends Component {
         isModified: this.props.isValidationVisible
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
             this.setState({ isModified: nextProps.isValidationVisible });
     }
 

@@ -84,10 +84,6 @@ export default class TodoManageComponent extends React.Component {
                             rules={ruleSet.name}
                             isValidationVisible={this.state.isSubmitAttempted}
                         />
-                        {/* <input type="text" className="form-control" id="itemName"
-                            value={this.state.name}
-                            onChange={this.handleNameChange}
-                        /> */}
                     </div>
                 </div>
                 <div className="form-group row">
@@ -98,22 +94,16 @@ export default class TodoManageComponent extends React.Component {
                                 checked={this.state.isActive}
                                 onChange={this.handleIsActiveChange}
                             />
-                            {/* <label className="form-check-label" htmlFor="itemActive">
-                                Example checkbox
-                            </label> */}
                         </div>
                     </div>
                 </div>
 
                 <div className="clearfix">
-                    {/*  <button type="submit" className="btn btn-outline-primary float-right">
-                        Save
-                </button> */}
                     <div className="float-right">
                         <Button
                             value="Submit"
-                            type="primary"
                             icon="check"
+                            type="outline-primary"
                             onClick={this.manageItem}
                             isLoading={this.state.isLoading}
                         />
