@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import Alert from '../components/Alert';
+import ButtonIcon from '../components/ButtonIcon';
 
 class DomShowreelComponent extends React.Component {
     constructor(props) {
@@ -12,6 +13,17 @@ class DomShowreelComponent extends React.Component {
                 <Alert type="info" noMarginBottom>
                     You can use Alerts like this.
                 </Alert>
+
+                <div className="card-header-controls">
+                        <ButtonIcon
+                            icon="plus"
+                            type="primary"
+                            onClick={null}
+                            isDisabled={null}
+                        />
+                </div>
+
+                
 
             </Fragment>
         )
