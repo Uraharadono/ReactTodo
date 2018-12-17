@@ -1,11 +1,22 @@
 import React, { Fragment } from 'react';
 import Alert from '../components/Alert';
 import ButtonIcon from '../components/ButtonIcon';
+import ButtonToggle from '../components/ButtonToggle';
 
 class DomShowreelComponent extends React.Component {
     constructor(props) {
         super(props);
     }
+
+    state = {
+        name: '',
+        isActive: true,
+        isSubmitAttempted: false
+    }
+
+    onActivate = () => this.setState({ isActive: true })
+    onDeactivate = () => this.setState({ isActive: false })
+
 
     render() {
         return (
@@ -23,8 +34,14 @@ class DomShowreelComponent extends React.Component {
                         />
                 </div>
 
-                
+                <ButtonToggle
+                        label="Is this awesome?"
+                        isActive={this.state.isActive}
+                        onActivate={this.onActivate}
+                        onDeactivate={this.onDeactivate}
+                />
 
+                
             </Fragment>
         )
     }
