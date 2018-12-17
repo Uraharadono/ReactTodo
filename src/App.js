@@ -27,25 +27,30 @@ class App extends React.Component {
                                 <li className="nav-item active">
                                     <Link to="/" className="nav-link">
                                         Home
-                                 </Link>
+                                    </Link>
                                     {/* <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> */}
                                 </li>
                                 <li className="nav-item">
                                     {/* <a className="nav-link" href="#">Features</a> */}
                                     <Link to="todo-list" className="nav-link">
                                         Todo list (multi file)
-                                 </Link>
+                                    </Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link to="todo-list-2" className="nav-link">
                                         Todo list (single file)
-                                 </Link>
+                                    </Link>
                                     {/* <a className="nav-link" href="#">Pricing</a> */}
                                 </li>
                                 <li className="nav-item">
                                     <Link to="todo-validated" className="nav-link">
                                         Todo list (validated)
-                                 </Link>
+                                    </Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link to="dom-showreel" className="nav-link">
+                                        DOM elements showreel
+                                    </Link>
                                 </li>
 
                             </ul>
