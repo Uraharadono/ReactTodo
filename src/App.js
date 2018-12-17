@@ -42,6 +42,12 @@ class App extends React.Component {
                                  </Link>
                                     {/* <a className="nav-link" href="#">Pricing</a> */}
                                 </li>
+                                <li className="nav-item">
+                                    <Link to="todo-validated" className="nav-link">
+                                        Todo list (validated)
+                                 </Link>
+                                </li>
+
                             </ul>
                         </div>
                     </nav>

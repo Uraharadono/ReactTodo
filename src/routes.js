@@ -1,22 +1,28 @@
-import Todo from "./TodoComponent/Todo";
-import Todo2 from "./TodoComponentTwo/Todo";
+import TodoMultiFiles from "./TodoComponentMultiFiles/Todo";
+import TodoSingleFile from "./TodoComponentSingleFile/Todo";
+import TodoComponentValidated from "./TodoComponentValidated/Todo";
 
 
 const routes = [
     {
         path: '/',
         exact: true,
-        component: Todo,
+        component: TodoMultiFiles,
     },
     {
         path: '/todo-list',
         exact: false,
-        component: Todo,
+        component: TodoMultiFiles,
     },
     {
         path: '/todo-list-2',
         exact: false,
-        component: Todo2,
+        component: TodoSingleFile,
+    },
+    {
+        path: '/todo-validated',
+        exact: false,
+        component: TodoComponentValidated,
     }
 ];
 
