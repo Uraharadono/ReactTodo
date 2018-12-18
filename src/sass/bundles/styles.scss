@@ -17,7 +17,7 @@
 @import '~bootstrap/scss/functions';
 @import '~bootstrap/scss/variables';
 @import '~bootstrap/scss/mixins';
-// @import '~react-datepicker/src/stylesheets/datepicker';
+@import '~react-datepicker/src/stylesheets/datepicker';
 
 //======================================================================================
 // Bootstrap Core CSS
@@ -111,7 +111,7 @@
 // @import '../components/sub-header';
 // @import '../components/logos';
 // @import '../components/error-list';
-// @import '../components/datepicker';
+@import '../components/datepicker';
 // @import '../components/info-card';
 // @import '../components/result-list';
 // @import '../components/badge';

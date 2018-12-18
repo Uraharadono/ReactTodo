@@ -1,7 +1,7 @@
 import qs from 'qs';
-// import format from 'date-fns/format';
+import format from 'date-fns/format';
 import { isString } from 'lodash';
-// import moment from 'moment';
+import moment from 'moment';
 
 export function tryParseJson(str) {
     try {
@@ -30,56 +30,56 @@ export function tryParseInt(str) {
     return response || null;
 }
 
-// export function getYear(value) {
-//     return moment(value, moment.ISO_8601).year();
-// }
+export function getYear(value) {
+    return moment(value, moment.ISO_8601).year();
+}
 
-// export function formatDate(value, formatStr = 'DD-MM-YYYY') {
-//     return format(value, formatStr);
-// }
+export function formatDate(value, formatStr = 'DD-MM-YYYY') {
+    return format(value, formatStr);
+}
 
-// export function isGreaterThanDate(now, end) {
-//     if (now == null && (end != null || end !== 'invalid'))
-//         return true;
-//     if (now === 'invalid' || end === 'invalid')
-//         return false;
-//     if (now == null && end == null)
-//         return true;
-//     if (!isDateFuture(now) || !isDateFuture(end))
-//         return false;
-//     return moment(now).isAfter(end);
-// }
+export function isGreaterThanDate(now, end) {
+    if (now == null && (end != null || end !== 'invalid'))
+        return true;
+    if (now === 'invalid' || end === 'invalid')
+        return false;
+    if (now == null && end == null)
+        return true;
+    if (!isDateFuture(now) || !isDateFuture(end))
+        return false;
+    return moment(now).isAfter(end);
+}
 
-// export function momentDate(date) {
-//     const d = formatDateMoment(date);
-//     return date == null ? null : moment(d, 'DD-MM-YYYY');
-// }
+export function momentDate(date) {
+    const d = formatDateMoment(date);
+    return date == null ? null : moment(d, 'DD-MM-YYYY');
+}
 
-// export function isDateFuture(now) {
-//     if (now === 'Invalid date')
-//         return false;
-//     if (now == null)
-//         return true;
-//     return moment(now).isAfter();
-// }
+export function isDateFuture(now) {
+    if (now === 'Invalid date')
+        return false;
+    if (now == null)
+        return true;
+    return moment(now).isAfter();
+}
 
-// export function formatDateMoment(date) {
-//     return moment(date).format('DD-MM-YYYY');
-// }
+export function formatDateMoment(date) {
+    return moment(date).format('DD-MM-YYYY');
+}
 
-// export function formatDateMomentISO(date) {
-//     return date == null
-//         ? null
-//         : moment(date).format(moment.ISO_8601);
-// }
+export function formatDateMomentISO(date) {
+    return date == null
+        ? null
+        : moment(date).format(moment.ISO_8601);
+}
 
-// export function formatDateTime(value) {
-//     return format(value, 'DD-MM-YYYY HH:mm');
-// }
+export function formatDateTime(value) {
+    return format(value, 'DD-MM-YYYY HH:mm');
+}
 
-// export function formatNullableDate(value) {
-//     return !isNullOrWs(value) ? formatDate(value) : '-';
-// }
+export function formatNullableDate(value) {
+    return !isNullOrWs(value) ? formatDate(value) : '-';
+}
 
 export function shorten(str, maxLen, separator = ' ', suffix = '...') {
     if (isNullOrWs(str) || str.length <= maxLen)

@@ -2,7 +2,8 @@ import React, { Fragment } from 'react';
 import Alert from '../components/Alert';
 import ButtonIcon from '../components/ButtonIcon';
 import ButtonToggle from '../components/ButtonToggle';
-import CardPlaceholder from '../components/CardPlaceholder';
+import TimeRangePicker from '../components/TimeRangePicker';
+
 
 
 class DomShowreelComponent extends React.Component {
@@ -14,11 +15,14 @@ class DomShowreelComponent extends React.Component {
     state = {
         name: '',
         isActive: true,
-        isSubmitAttempted: false
+        isSubmitAttempted: false,
+        date: '',
+        isValidationVisible: false
     }
 
     onActivate = () => this.setState({ isActive: true })
     onDeactivate = () => this.setState({ isActive: false })
+    onTimeChange = () => this.setState({ date: false })
 
 
     render() {
@@ -62,8 +66,17 @@ class DomShowreelComponent extends React.Component {
 
 
                 {/* Doesn't work since Card error is not working
+                import CardPlaceholder from '../components/CardPlaceholder';
                 <CardPlaceholder title="Title of card" error={} /> 
                 */}
+
+                <TimeRangePicker
+                    from={this.state.date}
+                    until={this.state.date}
+                    // ruleSetFactory={ruleSetFactory}
+                    onChange={this.onTimeChange}
+                    isValidationVisible={this.state.isValidationVisible}
+                />
 
 
             </Fragment>
