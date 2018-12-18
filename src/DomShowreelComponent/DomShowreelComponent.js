@@ -5,6 +5,8 @@ import ButtonToggle from '../components/ButtonToggle';
 import TimeRangePicker from '../components/TimeRangePicker';
 import ConfirmDialog from '../components/ConfirmDialog';
 import Button from '../components/Button';
+import Dropdown from '../components/Dropdown';
+import Roles from '../enums/example-enum-roles';
 
 class DomShowreelComponent extends React.Component {
     constructor(props) {
@@ -19,15 +21,26 @@ class DomShowreelComponent extends React.Component {
         date: '',
         isValidationVisible: false,
         isConfirmDialogOpen: false,
-        isLoading: false
+        isLoading: false,
+        role: -1
     }
 
     onActivate = () => this.setState({ isActive: true })
     onDeactivate = () => this.setState({ isActive: false })
+
     onTimeChange = () => this.setState({ date: false })
+
     openDeleteConfirmDialog = () => this.setState({ isConfirmDialogOpen: true });
     closeDeleteConfirmDialog = () => this.setState({ isConfirmDialogOpen: false });
     deleteThingy = () => this.setState({ isConfirmDialogOpen: false });
+
+    onRoleSelect = (role) => {
+        // if (role === Roles.Clerk)
+            // fetch stuff 
+        // ..etc
+        
+        this.setState({ role, id: null });
+    }
 
     render() {
         return (
@@ -100,6 +113,15 @@ class DomShowreelComponent extends React.Component {
                     onConfirm={this.deleteThingy}
                 />
 
+                <Dropdown
+                    label="Select something"
+                    value={this.state.role}
+                    // rules={rules.role}
+                    isValidationVisible={this.state.isSubmitAttempted}
+                    placeholder="Select a role"
+                    items={Roles.enumerate()}
+                    onChange={this.onRoleSelect}
+                />
 
             </Fragment>
         )
