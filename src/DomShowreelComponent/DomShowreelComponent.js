@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import Alert from '../components/Alert';
 import ButtonIcon from '../components/ButtonIcon';
 import ButtonToggle from '../components/ButtonToggle';
+import CardPlaceholder from '../components/CardPlaceholder';
 
 
 class DomShowreelComponent extends React.Component {
@@ -28,19 +29,19 @@ class DomShowreelComponent extends React.Component {
                 </Alert>
 
                 <div className="card-header-controls">
-                        <ButtonIcon
-                            icon="plus"
-                            type="primary"
-                            onClick={null}
-                            isDisabled={null}
-                        />
+                    <ButtonIcon
+                        icon="plus"
+                        type="primary"
+                        onClick={null}
+                        isDisabled={null}
+                    />
                 </div>
 
                 <ButtonToggle
-                        label="Is this awesome?"
-                        isActive={this.state.isActive}
-                        onActivate={this.onActivate}
-                        onDeactivate={this.onDeactivate}
+                    label="Is this awesome?"
+                    isActive={this.state.isActive}
+                    onActivate={this.onActivate}
+                    onDeactivate={this.onDeactivate}
                 />
 
                 {/* Could not be bothered to make this work atm
@@ -59,7 +60,11 @@ class DomShowreelComponent extends React.Component {
                     close={this.props.hideDialogError}
                 /> */}
 
-                
+
+                {/* Doesn't work since Card error is not working
+                <CardPlaceholder title="Title of card" error={} /> 
+                */}
+
 
             </Fragment>
         )
