@@ -3,8 +3,8 @@ import Alert from '../components/Alert';
 import ButtonIcon from '../components/ButtonIcon';
 import ButtonToggle from '../components/ButtonToggle';
 import TimeRangePicker from '../components/TimeRangePicker';
-
-
+import ConfirmDialog from '../components/ConfirmDialog';
+import Button from '../components/Button';
 
 class DomShowreelComponent extends React.Component {
     constructor(props) {
@@ -17,13 +17,17 @@ class DomShowreelComponent extends React.Component {
         isActive: true,
         isSubmitAttempted: false,
         date: '',
-        isValidationVisible: false
+        isValidationVisible: false,
+        isConfirmDialogOpen: false,
+        isLoading: false
     }
 
     onActivate = () => this.setState({ isActive: true })
     onDeactivate = () => this.setState({ isActive: false })
     onTimeChange = () => this.setState({ date: false })
-
+    openDeleteConfirmDialog = () => this.setState({ isConfirmDialogOpen: true });
+    closeDeleteConfirmDialog = () => this.setState({ isConfirmDialogOpen: false });
+    deleteThingy = () => this.setState({ isConfirmDialogOpen: false });
 
     render() {
         return (
@@ -76,6 +80,24 @@ class DomShowreelComponent extends React.Component {
                     // ruleSetFactory={ruleSetFactory}
                     onChange={this.onTimeChange}
                     isValidationVisible={this.state.isValidationVisible}
+                />
+                <br></br>
+                <Button
+                    value="Open modal"
+                    icon="check"
+                    type="outline-primary"
+                    onClick={this.openDeleteConfirmDialog}
+                    isLoading={this.state.isLoading}
+                />
+                <ConfirmDialog
+                    isOpen={this.state.isConfirmDialogOpen}
+                    close={this.closeDeleteConfirmDialog}
+                    title="Confirmation"
+                    text="Are you sure you want to delete the selected thingy?"
+                    buttonType="danger"
+                    buttonIcon="trash"
+                    buttonText="Delete"
+                    onConfirm={this.deleteThingy}
                 />
 
 
