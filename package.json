@@ -62,6 +62,7 @@
     "ramda": "^0.26.1",
     "react-datepicker": "^2.0.0",
     "react-router-dom": "^4.3.1",
+    "react-tabs": "^2.3.0",
     "reactstrap": "^6.5.0",
     "validator": "^10.9.0"
   }

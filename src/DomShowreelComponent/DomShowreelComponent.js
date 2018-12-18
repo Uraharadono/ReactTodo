@@ -7,12 +7,13 @@ import ConfirmDialog from '../components/ConfirmDialog';
 import Button from '../components/Button';
 import Dropdown from '../components/Dropdown';
 import Roles from '../enums/example-enum-roles';
+import DynamicTabs from '../components/DynamicTabs';
+import TabContent from './TabContent';
 
 class DomShowreelComponent extends React.Component {
     constructor(props) {
         super(props);
     }
-
 
     state = {
         name: '',
@@ -22,7 +23,31 @@ class DomShowreelComponent extends React.Component {
         isValidationVisible: false,
         isConfirmDialogOpen: false,
         isLoading: false,
-        role: -1
+        role: -1,
+        tabs: [],
+        tabItems: []
+    }
+
+    UNSAFE_componentWillMount() {
+        let tabs = [];
+        let tabItems = [];
+        for (let i = 0; i < 5; i++) {
+            tabItems.push("Item " + i);
+            tabs.push({
+                id: i,
+                name: "Tab " + i,
+                description: "Desription of tab number " + i,
+                descriptionExcerpt: "Description stuff",
+                handleDescriptionChange: (item) => console.log(item),
+                handleDescriptionExcerptChange: (item) => console.log(item),
+                isSubmitAttempted: false,
+                TabComponent: TabContent
+            });
+        }
+        this.setState({
+            tabs: tabs,
+            tabItems: tabItems
+        });
     }
 
     onActivate = () => this.setState({ isActive: true })
@@ -36,9 +61,9 @@ class DomShowreelComponent extends React.Component {
 
     onRoleSelect = (role) => {
         // if (role === Roles.Clerk)
-            // fetch stuff 
+        // fetch stuff 
         // ..etc
-        
+
         this.setState({ role, id: null });
     }
 
@@ -121,6 +146,14 @@ class DomShowreelComponent extends React.Component {
                     placeholder="Select a role"
                     items={Roles.enumerate()}
                     onChange={this.onRoleSelect}
+                />
+
+
+                <DynamicTabs
+                    tabs={this.state.tabs}
+                    items={this.state.tabItems}
+                    insertTab={(item) => console.log(item)}
+                    removeTab={(item) => console.log(item)}
                 />
 
             </Fragment>
