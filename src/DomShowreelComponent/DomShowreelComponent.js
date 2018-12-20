@@ -11,6 +11,7 @@ import DynamicTabs from '../components/DynamicTabs';
 import TabContent from './TabContent';
 import Lightbox from '../components/Lightbox';
 import Pagination from '../components/Pagination';
+import SelectList from '../components/SelectList';
 
 class DomShowreelComponent extends React.Component {
     constructor(props) {
@@ -32,7 +33,8 @@ class DomShowreelComponent extends React.Component {
         isLightboxOpen: false,
         pages: 100,
         page: 1,
-        take: 7
+        take: 7,
+        colors: ["red", "green", "blue"],
     }
 
     UNSAFE_componentWillMount() {
@@ -102,14 +104,29 @@ class DomShowreelComponent extends React.Component {
         );
     }
 
+    
+    handleColorChange = (key) => {
+        const colors = this.state.colors;
+        // if (colors.includes(key)) {
+        //     this.setState({ colors: colors.filter((c) => c !== key) });
+        // } else {
+        //     this.setState({ colors: [...colors, key] });
+        // }
+    }
+
     render() {
         // const imageUrls = keys
         // .map((key) => images[key].url)
         // .filter((url) => !isNullOrWs(url));
 
         const imageUrls = [];
+        const colors = [];
         for (let i = 1; i < 10; i++) {
             imageUrls.push("https://via.placeholder.com/" + i * 100);
+            colors.push({
+                name: "Color " + i,
+                id: i
+            });
         }
         return (
             <Fragment>
@@ -217,14 +234,25 @@ class DomShowreelComponent extends React.Component {
                     />}
 
                 <div className="media-pagination">
-                <Pagination
-                    pageSize={this.state.take}
-                    itemCount={this.state.pages}
-                    currentPage={this.state.page}
-                    onPageChange={this.onPageChange}
-                    isDisabled={false}
+                    <Pagination
+                        pageSize={this.state.take}
+                        itemCount={this.state.pages}
+                        currentPage={this.state.page}
+                        onPageChange={this.onPageChange}
+                        isDisabled={false}
+                    />
+                </div>
+
+                <SelectList
+                    id="colors"
+                    label="Colors"
+                    items={colors}
+                    selectedItems={this.state.colors}
+                    onChange={this.handleColorChange}
+                    // rules={ruleSet.colors}
+                    isValidationVisible={this.state.isSubmitAttempted}
+                    isFilterInputVisible
                 />
-            </div>
 
             </Fragment>
         )
