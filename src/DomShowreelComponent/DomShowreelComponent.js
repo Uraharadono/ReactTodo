@@ -13,6 +13,7 @@ import Lightbox from '../components/Lightbox';
 import Pagination from '../components/Pagination';
 import SelectList from '../components/SelectList';
 import TextArea from '../components/TextArea';
+import TextAreaDisplay from '../components/TextAreaDisplay';
 
 class DomShowreelComponent extends React.Component {
     constructor(props) {
@@ -266,7 +267,10 @@ class DomShowreelComponent extends React.Component {
                     onChange={this.handleDescriptionChange}
                     isValidationVisible={this.state.isSubmitAttempted}
                 />
+                <br/>
+                <TextAreaDisplay label="Your description " value={this.state.description} />
 
+                <br/>
             </Fragment>
         )
     }
