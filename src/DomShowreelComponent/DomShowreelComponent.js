@@ -10,6 +10,7 @@ import Roles from '../enums/example-enum-roles';
 import DynamicTabs from '../components/DynamicTabs';
 import TabContent from './TabContent';
 import Lightbox from '../components/Lightbox';
+import Pagination from '../components/Pagination';
 
 class DomShowreelComponent extends React.Component {
     constructor(props) {
@@ -28,7 +29,10 @@ class DomShowreelComponent extends React.Component {
         tabs: [],
         tabItems: [],
         currentImage: 0,
-        isLightboxOpen: false
+        isLightboxOpen: false,
+        pages: 100,
+        page: 1,
+        take: 7
     }
 
     UNSAFE_componentWillMount() {
@@ -90,6 +94,12 @@ class DomShowreelComponent extends React.Component {
             currentImage: 0,
             isLightboxOpen: false
         });
+    }
+
+    onPageChange = (page) => {
+        this.setState({ page },
+            // () => this.props.fetchArticles({ page, take: this.state.take })
+        );
     }
 
     render() {
@@ -205,6 +215,16 @@ class DomShowreelComponent extends React.Component {
                         gotoNext={this.onClickNext}
                         gotoPrevious={this.onClickPrev}
                     />}
+
+                <div className="media-pagination">
+                <Pagination
+                    pageSize={this.state.take}
+                    itemCount={this.state.pages}
+                    currentPage={this.state.page}
+                    onPageChange={this.onPageChange}
+                    isDisabled={false}
+                />
+            </div>
 
             </Fragment>
         )
