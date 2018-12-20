@@ -9,6 +9,7 @@ import Dropdown from '../components/Dropdown';
 import Roles from '../enums/example-enum-roles';
 import DynamicTabs from '../components/DynamicTabs';
 import TabContent from './TabContent';
+import Lightbox from '../components/Lightbox';
 
 class DomShowreelComponent extends React.Component {
     constructor(props) {
@@ -25,7 +26,9 @@ class DomShowreelComponent extends React.Component {
         isLoading: false,
         role: -1,
         tabs: [],
-        tabItems: []
+        tabItems: [],
+        currentImage: 0,
+        isLightboxOpen: false
     }
 
     UNSAFE_componentWillMount() {
@@ -67,7 +70,37 @@ class DomShowreelComponent extends React.Component {
         this.setState({ role, id: null });
     }
 
+    openLightbox = () => {
+        this.setState({
+            isLightboxOpen: true
+        });
+    }
+    onClickPrev = () => {
+        this.setState((state) => ({
+            currentImage: state.currentImage - 1
+        }));
+    }
+    onClickNext = () => {
+        this.setState((state) => ({
+            currentImage: state.currentImage + 1
+        }));
+    }
+    closeLightbox = () => {
+        this.setState({
+            currentImage: 0,
+            isLightboxOpen: false
+        });
+    }
+
     render() {
+        // const imageUrls = keys
+        // .map((key) => images[key].url)
+        // .filter((url) => !isNullOrWs(url));
+
+        const imageUrls = [];
+        for (let i = 1; i < 10; i++) {
+            imageUrls.push("https://via.placeholder.com/" + i * 100);
+        }
         return (
             <Fragment>
                 <Alert type="info" noMarginBottom>
@@ -149,12 +182,29 @@ class DomShowreelComponent extends React.Component {
                 />
 
 
-                <DynamicTabs
+                {/* <DynamicTabs
                     tabs={this.state.tabs}
                     items={this.state.tabItems}
                     insertTab={(item) => console.log(item)}
                     removeTab={(item) => console.log(item)}
+                /> */}
+
+                <Button
+                    value="Open lightbox"
+                    icon="check"
+                    type="outline-primary"
+                    onClick={this.openLightbox}
+                    isLoading={this.state.isLoading}
                 />
+                {imageUrls.length > 0 &&
+                    <Lightbox
+                        images={imageUrls}
+                        isOpen={this.state.isLightboxOpen}
+                        currentImage={this.state.currentImage}
+                        close={this.closeLightbox}
+                        gotoNext={this.onClickNext}
+                        gotoPrevious={this.onClickPrev}
+                    />}
 
             </Fragment>
         )
