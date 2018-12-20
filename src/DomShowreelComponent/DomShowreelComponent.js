@@ -15,6 +15,7 @@ import SelectList from '../components/SelectList';
 import TextArea from '../components/TextArea';
 import TextAreaDisplay from '../components/TextAreaDisplay';
 import TextInputDisplay from '../components/TextInputDisplay';
+import TooltipIcon from '../components/TooltipIcon';
 
 class DomShowreelComponent extends React.Component {
     constructor(props) {
@@ -39,7 +40,8 @@ class DomShowreelComponent extends React.Component {
         take: 7,
         colors: ["red", "green", "blue"],
         description: "",
-        someTextInput: "I am awesome"
+        someTextInput: "I am awesome",
+        tooltipText: "I am also awesome"
     }
 
     UNSAFE_componentWillMount() {
@@ -275,6 +277,16 @@ class DomShowreelComponent extends React.Component {
                 <br/>
                 <TextInputDisplay label="Email address" value={this.state.someTextInput} />
 
+                <br/>
+                <div className="d-flex justify-content-between">
+                <TextInputDisplay
+                    label="Input with tooltip:"
+                    value={"lalalalla"}
+                />
+                <TooltipIcon
+                    text={this.state.tooltipText}
+                />
+                </div>
             </Fragment>
         )
     }
