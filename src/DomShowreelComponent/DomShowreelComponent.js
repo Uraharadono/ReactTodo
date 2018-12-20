@@ -12,6 +12,7 @@ import TabContent from './TabContent';
 import Lightbox from '../components/Lightbox';
 import Pagination from '../components/Pagination';
 import SelectList from '../components/SelectList';
+import TextArea from '../components/TextArea';
 
 class DomShowreelComponent extends React.Component {
     constructor(props) {
@@ -35,6 +36,7 @@ class DomShowreelComponent extends React.Component {
         page: 1,
         take: 7,
         colors: ["red", "green", "blue"],
+        description: "",
     }
 
     UNSAFE_componentWillMount() {
@@ -113,6 +115,8 @@ class DomShowreelComponent extends React.Component {
         //     this.setState({ colors: [...colors, key] });
         // }
     }
+
+    handleDescriptionChange = (event) => this.setState({ description: event.target.value });
 
     render() {
         // const imageUrls = keys
@@ -252,6 +256,15 @@ class DomShowreelComponent extends React.Component {
                     // rules={ruleSet.colors}
                     isValidationVisible={this.state.isSubmitAttempted}
                     isFilterInputVisible
+                />
+                <br/>
+                <TextArea
+                    label="Description"
+                    id="some-description"
+                    value={this.state.description}
+                    // rules={ruleSet.description}
+                    onChange={this.handleDescriptionChange}
+                    isValidationVisible={this.state.isSubmitAttempted}
                 />
 
             </Fragment>
