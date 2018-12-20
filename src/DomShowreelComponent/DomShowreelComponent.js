@@ -14,6 +14,7 @@ import Pagination from '../components/Pagination';
 import SelectList from '../components/SelectList';
 import TextArea from '../components/TextArea';
 import TextAreaDisplay from '../components/TextAreaDisplay';
+import TextInputDisplay from '../components/TextInputDisplay';
 
 class DomShowreelComponent extends React.Component {
     constructor(props) {
@@ -38,6 +39,7 @@ class DomShowreelComponent extends React.Component {
         take: 7,
         colors: ["red", "green", "blue"],
         description: "",
+        someTextInput: "I am awesome"
     }
 
     UNSAFE_componentWillMount() {
@@ -271,6 +273,8 @@ class DomShowreelComponent extends React.Component {
                 <TextAreaDisplay label="Your description " value={this.state.description} />
 
                 <br/>
+                <TextInputDisplay label="Email address" value={this.state.someTextInput} />
+
             </Fragment>
         )
     }
