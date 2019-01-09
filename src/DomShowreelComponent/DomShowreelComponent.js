@@ -16,6 +16,7 @@ import TextArea from '../components/TextArea';
 import TextAreaDisplay from '../components/TextAreaDisplay';
 import TextInputDisplay from '../components/TextInputDisplay';
 import TooltipIcon from '../components/TooltipIcon';
+import UploadPlaceholder from '../components/UploadPlaceholder';
 
 class DomShowreelComponent extends React.Component {
     constructor(props) {
@@ -41,7 +42,8 @@ class DomShowreelComponent extends React.Component {
         colors: ["red", "green", "blue"],
         description: "",
         someTextInput: "I am awesome",
-        tooltipText: "I am also awesome"
+        tooltipText: "I am also awesome",
+        url: ""
     }
 
     UNSAFE_componentWillMount() {
@@ -111,7 +113,7 @@ class DomShowreelComponent extends React.Component {
         );
     }
 
-    
+
     handleColorChange = (key) => {
         const colors = this.state.colors;
         // if (colors.includes(key)) {
@@ -122,6 +124,19 @@ class DomShowreelComponent extends React.Component {
     }
 
     handleDescriptionChange = (event) => this.setState({ description: event.target.value });
+
+
+    handleImageUploadStart = (id) => {
+        console.log("handleImageUploadStart " + id);
+    }
+
+    handleImageUpload = (document, id) => {
+        console.log("handleImageUpload " + id);
+    }
+
+    handleImageDelete = (id) => {
+        console.log("handleImageDelete " + id);
+    }
 
     render() {
         // const imageUrls = keys
@@ -262,7 +277,7 @@ class DomShowreelComponent extends React.Component {
                     isValidationVisible={this.state.isSubmitAttempted}
                     isFilterInputVisible
                 />
-                <br/>
+                <br />
                 <TextArea
                     label="Description"
                     id="some-description"
@@ -271,21 +286,36 @@ class DomShowreelComponent extends React.Component {
                     onChange={this.handleDescriptionChange}
                     isValidationVisible={this.state.isSubmitAttempted}
                 />
-                <br/>
+                <br />
                 <TextAreaDisplay label="Your description " value={this.state.description} />
 
-                <br/>
+                <br />
                 <TextInputDisplay label="Email address" value={this.state.someTextInput} />
 
-                <br/>
+                <br />
                 <div className="d-flex justify-content-between">
-                <TextInputDisplay
-                    label="Input with tooltip:"
-                    value={"lalalalla"}
-                />
-                <TooltipIcon
-                    text={this.state.tooltipText}
-                />
+                    <TextInputDisplay
+                        label="Input with tooltip:"
+                        value={"lalalalla"}
+                    />
+                    <TooltipIcon
+                        text={this.state.tooltipText}
+                    />
+                </div>
+
+                <div className="col-4">
+                    <UploadPlaceholder
+                        type="image"
+                        text="Detail"
+                        id={123}
+                        url={this.state.url}
+                        onDelete={this.handleImageDelete}
+                        onBeforeUpload={this.handleImageUploadStart}
+                        onUpload={this.handleImageUpload}
+                        onUploadError={(err) => console.log(err)}
+                        isLoading={this.state.isLoading}
+                        isEditable
+                    />
                 </div>
             </Fragment>
         )
