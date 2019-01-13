@@ -1,5 +1,5 @@
-import { must } from '../validation/rule-builder';
-import { beNotEmpty, beExactlyLong, beLessThan } from '../validation/predicates';
+import { must } from '../../validation/rule-builder';
+import { beNotEmpty, beExactlyLong, beLessThan } from '../../validation/predicates';
 
 export const ruleSet = {
     name: must(beNotEmpty)

@@ -1,7 +1,7 @@
 import React from "react";
-import TextInput from '../components/TextInput';
-import Button from '../components/Button';
-import { isInstanceValid } from '../validation/validator';
+import TextInput from '../../components/TextInput';
+import Button from '../../components/Button';
+import { isInstanceValid } from '../../validation/validator';
 import { ruleSet } from '../TodoComponentValidated/TodoItemModel';
 
 export default class TodoManageComponent extends React.Component {

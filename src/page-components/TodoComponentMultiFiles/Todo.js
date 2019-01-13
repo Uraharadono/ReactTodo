@@ -1,7 +1,7 @@
 import React from "react";
 import TodoItem from "./TodoItem";
 import TodoManageComponent from "./TodoManageComponent";
-import ComponentLoader from '../components/ComponentLoader';
+import ComponentLoader from '../../components/ComponentLoader';
 
 class Todo extends React.Component {
 

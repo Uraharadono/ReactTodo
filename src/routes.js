@@ -1,7 +1,7 @@
-import TodoMultiFiles from "./TodoComponentMultiFiles/Todo";
-import TodoSingleFile from "./TodoComponentSingleFile/Todo";
-import TodoComponentValidated from "./TodoComponentValidated/Todo";
-import DomShowreelComponent from "./DomShowreelComponent/DomShowreelComponent";
+import TodoMultiFiles from "./page-components/TodoComponentMultiFiles/Todo";
+import TodoSingleFile from "./page-components/TodoComponentSingleFile/Todo";
+import TodoComponentValidated from "./page-components/TodoComponentValidated/Todo";
+import DomShowreelComponent from "./page-components/DomShowreelComponent/DomShowreelComponent";
 
 
 const routes = [

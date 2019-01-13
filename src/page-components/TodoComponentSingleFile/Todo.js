@@ -1,5 +1,5 @@
 import React from "react";
-import ComponentLoader from '../components/ComponentLoader';
+import ComponentLoader from '../../components/ComponentLoader';
 
 class Todo2 extends React.Component {
 

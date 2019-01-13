@@ -1,22 +1,22 @@
 import React, { Fragment } from 'react';
-import Alert from '../components/Alert';
-import ButtonIcon from '../components/ButtonIcon';
-import ButtonToggle from '../components/ButtonToggle';
-import TimeRangePicker from '../components/TimeRangePicker';
-import ConfirmDialog from '../components/ConfirmDialog';
-import Button from '../components/Button';
-import Dropdown from '../components/Dropdown';
-import Roles from '../enums/example-enum-roles';
-import DynamicTabs from '../components/DynamicTabs';
+import Alert from '../../components/Alert';
+import ButtonIcon from '../../components/ButtonIcon';
+import ButtonToggle from '../../components/ButtonToggle';
+import TimeRangePicker from '../../components/TimeRangePicker';
+import ConfirmDialog from '../../components/ConfirmDialog';
+import Button from '../../components/Button';
+import Dropdown from '../../components/Dropdown';
+import Roles from '../../enums/example-enum-roles';
+import DynamicTabs from '../../components/DynamicTabs';
 import TabContent from './TabContent';
-import Lightbox from '../components/Lightbox';
-import Pagination from '../components/Pagination';
-import SelectList from '../components/SelectList';
-import TextArea from '../components/TextArea';
-import TextAreaDisplay from '../components/TextAreaDisplay';
-import TextInputDisplay from '../components/TextInputDisplay';
-import TooltipIcon from '../components/TooltipIcon';
-import UploadPlaceholder from '../components/UploadPlaceholder';
+import Lightbox from '../../components/Lightbox';
+import Pagination from '../../components/Pagination';
+import SelectList from '../../components/SelectList';
+import TextArea from '../../components/TextArea';
+import TextAreaDisplay from '../../components/TextAreaDisplay';
+import TextInputDisplay from '../../components/TextInputDisplay';
+import TooltipIcon from '../../components/TooltipIcon';
+import UploadPlaceholder from '../../components/UploadPlaceholder';
 
 class DomShowreelComponent extends React.Component {
     constructor(props) {
