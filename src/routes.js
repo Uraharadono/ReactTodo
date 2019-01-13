@@ -1,6 +1,7 @@
 import TodoMultiFiles from "./TodoComponentMultiFiles/Todo";
 import TodoSingleFile from "./TodoComponentSingleFile/Todo";
 import TodoComponentValidated from "./TodoComponentValidated/Todo";
+import DomShowreelComponent from "./DomShowreelComponent/DomShowreelComponent";
 
 
 const routes = [
@@ -23,6 +24,11 @@ const routes = [
         path: '/todo-validated',
         exact: false,
         component: TodoComponentValidated,
+    },
+    {
+        path: '/dom-showreel',
+        exact: false,
+        component: DomShowreelComponent,
     }
 ];
 

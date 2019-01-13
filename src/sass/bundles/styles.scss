@@ -17,7 +17,7 @@
 @import '~bootstrap/scss/functions';
 @import '~bootstrap/scss/variables';
 @import '~bootstrap/scss/mixins';
-// @import '~react-datepicker/src/stylesheets/datepicker';
+@import '~react-datepicker/src/stylesheets/datepicker';
 
 //======================================================================================
 // Bootstrap Core CSS
@@ -47,10 +47,10 @@
 @import '~bootstrap/scss/navbar';
 // // @import '~bootstrap/scss/card';
 // // @import '~bootstrap/scss/breadcrumb';
-// @import '~bootstrap/scss/pagination';
+@import '~bootstrap/scss/pagination';
 // @import '~bootstrap/scss/badge';
 // // @import '~bootstrap/scss/jumbotron';
-// // @import '~bootstrap/scss/alert';
+@import '~bootstrap/scss/alert';
 // // @import '~bootstrap/scss/progress';
 // // @import '~bootstrap/scss/media';
 // // @import '~bootstrap/scss/list-group';
@@ -63,7 +63,7 @@
 // Bootstrap components with javascript
 //======================================================================================
 
-// @import '~bootstrap/scss/modal';
+@import '~bootstrap/scss/modal';
 // @import '~bootstrap/scss/tooltip';
 // @import '~bootstrap/scss/popover';
 // @import '~bootstrap/scss/carousel';
@@ -97,12 +97,12 @@
 // @import '../components/buttons';
 @import '../components/loading-indicator';
 @import '../components/component-loader';
-// @import '../components/pagination';
+@import '../components/pagination';
 // @import '../components/forms';
 // @import '../components/navbar';
 // @import '../components/tables';
 // @import '../components/alerts';
-// @import '../components/media';
+@import '../components/media';
 // @import '../components/header';
 // @import '../components/tabs';
 // @import '../components/dialog';
@@ -111,7 +111,7 @@
 // @import '../components/sub-header';
 // @import '../components/logos';
 // @import '../components/error-list';
-// @import '../components/datepicker';
+@import '../components/datepicker';
 // @import '../components/info-card';
 // @import '../components/result-list';
 // @import '../components/badge';
