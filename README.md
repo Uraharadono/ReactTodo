@@ -27,3 +27,6 @@ Here are routes defined in the separate file: https://alligator.io/react/react-r
  
 This article shows in a way how to do it step by step: 
 - https://stevenwestmoreland.com/2018/01/how-to-include-bootstrap-in-your-project-with-webpack.html?fbclid=IwAR0IMbJm5WdMGUOD2fRu0-_8AglnZg57VZ4lKE0dh8s7mjfp0lspibz6lJY
+
+6.) I had problem with not being able to type in routes as urls, and issues when pages where reloaded. This article helped me with that: 
+https://tylermcginnis.com/react-router-cannot-get-url-refresh/ (NOTE: I used last solution in article)
